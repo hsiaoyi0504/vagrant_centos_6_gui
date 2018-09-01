@@ -81,6 +81,9 @@ Vagrant.configure("2") do |config|
     sudo yum groupinstall -y "X Window System" "Desktop"
     sudo yum install -y gnome-core xfce4 xorg-x11-fonts
     sudo echo "id:5:initdefault:" > /etc/inittab
+    # fix fonts problem in terminal
+    # https://forums.anandtech.com/threads/fonts-screwed-up-in-centos-6-terminal.2186468/
+    sudo yum -y install terminus-fonts terminus-fonts-console
     reboot # reboot to load GUI
   SHELL
 
